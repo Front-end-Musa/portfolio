@@ -1,5 +1,26 @@
 # PortfolioProject
 
+## Deploy to GitHub Pages
+
+In the repository's **Settings → Pages → Build and deployment**, select
+**GitHub Actions** as the source. Push the deployment configuration to `master`
+to run the **Deploy portfolio to GitHub Pages** workflow, or run it manually from
+the **Actions** tab. Future pushes to `master` deploy automatically.
+
+The expected URL is https://front-end-musa.github.io/portfolio/.
+
+To check the deployment build locally:
+
+```bash
+npm ci
+npm run build:pages
+```
+
+The deployable files are in `dist/portfolio-project/browser`. This build
+prerenders the portfolio as static HTML and uses `/portfolio/` as its base path;
+it does not require a Node server. If the repository is renamed or a custom
+domain is added, update `baseHref` in the `github-pages` build configuration.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.2.
 
 ## Development server
